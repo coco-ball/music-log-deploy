@@ -1,4 +1,4 @@
-import { getCurrentUser } from "../lib/Spotify";
+import { getCurrentUser } from "@/pages/lib/Spotify";
 import { getSession } from "next-auth/react";
 
 const handler = async (req, res) => {

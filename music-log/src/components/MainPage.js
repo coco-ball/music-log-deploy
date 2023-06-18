@@ -121,7 +121,7 @@ const MainPage = () => {
   };*/
 
   const getUserProfile = async () => {
-    const res = await fetch("../../pages/api/currentUser.js");
+    const res = await fetch("/api/currentUser");
     if (res.status != 200) {
     } else {
       const { id, images, display_name } = await res.json();
