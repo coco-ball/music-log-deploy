@@ -3,7 +3,6 @@ import { getSession } from "next-auth/react";
 
 const handler = async (req, res) => {
   console.log("currentUser handler");
-  console.log(accessToken);
   try {
     const {
       token: { accessToken },

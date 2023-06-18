@@ -56,6 +56,7 @@ export const getUsersPlayState = async (refresh_token) => {
 export const getCurrentUser = async (refresh_token) => {
   console.log("getCurrentUser in lib activated");
   const { access_token } = await getAccessToken(refresh_token);
+  console.log("token: " + access_token);
   const response = await fetch(CURRENTUSER_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
