@@ -84,3 +84,7 @@ export const getRecentlyPlayed = async (refresh_token) => {
 
   return response;
 };
+
+export default function Spotify() {
+  return console.log(1);
+}
