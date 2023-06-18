@@ -7,7 +7,9 @@ const handler = async (req, res) => {
     const {
       token: { accessToken },
     } = await getSession({ req });
+    console.log(accessToken);
     const response = await getCurrentUser(accessToken);
+    console.log("currentUser,js response: " + response);
     const responseData = await response.json();
 
     const { id, images, display_name } = responseData;

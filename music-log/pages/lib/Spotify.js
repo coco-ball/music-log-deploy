@@ -61,6 +61,7 @@ export const getCurrentUser = async (refresh_token) => {
       Authorization: `Bearer ${access_token}`,
     },
   });
+  console.log("Spotify.js response: " + response);
 
   if (!response.ok) {
     throw new Error("Failed to fetch current user");
