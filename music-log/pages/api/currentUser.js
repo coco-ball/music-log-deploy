@@ -3,11 +3,11 @@ import { getSession } from "next-auth/react";
 
 const handler = async (req, res) => {
   console.log("currentUser handler");
+  console.log(accessToken);
   try {
     const {
       token: { accessToken },
     } = await getSession({ req });
-    console.log(accessToken);
     const response = await getCurrentUser(accessToken);
     console.log("currentUser,js response: " + response);
     const responseData = await response.json();
