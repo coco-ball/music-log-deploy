@@ -2,18 +2,37 @@ export default function ListView({ logs, deleteLog }) {
   return (
     <div>
       {logs.map((log, index) => (
-        <div key={index} className="p-4">
-          <div className="flex bg-white border-2 border-black">
-            <div className="w-80 mr-4 bg-white p-4">
+        <div key={index} className="pb-8">
+          <div className="flex bg-white border-2 border-black w-auto h-auto hover:scale-105 hover:border-[#617FF5] transition-transform">
+            <div className="w-1/4 bg-white p-4">
               <img
-                className="w-auto mb-1 p-2"
+                className="w-auto rounded peer"
                 src={log.cover}
                 alt="앨범 커버"
               ></img>
-              <p className="text-center font-bold text-xl mb-1">{log.title}</p>
-              <p className="text-center text-small">{log.artist}</p>
             </div>
-            <div key={log.id} className="w-full bg-white p-4 relative">
+            <div key={log.id} className="w-3/4 bg-white p-4 relative">
+              <p className="text-2xl font-bold text-xl mb-6">
+                {log.title} - {log.artist}
+              </p>
+              <p
+                className="text-l font-bold"
+                style={{ display: "inline-block" }}
+              >
+                위치:{" "}
+              </p>{" "}
+              {log.location}
+              <p className="mb-4"></p>
+              <p
+                className="text-l font-bold"
+                style={{ display: "inline-block" }}
+              >
+                시간:{" "}
+              </p>{" "}
+              {log.datetime}
+              <p className="mb-4"></p>
+              <p className="text-l font-bold">남긴 메모</p>
+              <p className="w-full">{log.text}</p>
               <button>
                 <img
                   src="/close.svg"
@@ -23,18 +42,12 @@ export default function ListView({ logs, deleteLog }) {
                   }
                 ></img>
               </button>
-              <p className="text-xl font-bold mb-1">위치</p>
-              <p className="mb-4">{log.location}</p>
-              <p className="text-xl font-bold mb-1">시간</p>
-              <p className="mb-4">{log.datetime}</p>
-              <p className="text-xl font-bold mb-1">남긴 메모</p>
-              <p className="w-full">{log.text}</p>
             </div>
           </div>
         </div>
       ))}
 
-      <div className="flex bg-white w-72 h-36 border-2 border-black opacity-0"></div>
+      <div className="flex bg-white w-72 h-32 border-2 border-black opacity-0"></div>
     </div>
   );
 }

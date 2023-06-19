@@ -14,12 +14,12 @@ export default function Header({ username, userImg, setStateVar }) {
 
     <header className="fixed top-0 w-full flex justify-between items-center border-b-2 border-black gap-10 px-8 py-3 bg-white z-50">
       <button
-        className="font-bold ml-32"
+        className="font-extrabold text-xl ml-8 text-[#617FF5]"
         onClick={() => {
           setStateVar("LIST");
         }}
       >
-        뮤직 로그
+        Music Log
       </button>
       <div className="flex align-middle">
         <div className="flex items-center mr-6 ">

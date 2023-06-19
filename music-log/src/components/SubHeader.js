@@ -1,6 +1,6 @@
 export default function SubHeader({ stateVar, userName, toggleStateVar }) {
   return (
-    <div className="w-screen z-40 flex justify-center fixed top-12">
+    <div className="w-full z-40 flex justify-center fixed top-12">
       <div className="w-4/5 flex mt-12 justify-between max-w-5xl align-center bg-white border-2 border-black py-2 px-4">
         <div className="flex align-center">
           <img
@@ -17,7 +17,7 @@ export default function SubHeader({ stateVar, userName, toggleStateVar }) {
           </h1>
         </div>
         <button
-          className={`w-30 ml-auto text bg-[#617FF5] hover:bg-[#E3E6F2] text-white  hover:text-black py-1 px-3 border-2 border-black`}
+          className={`w-40 ml-auto font-semibold text bg-[#617FF5] hover:bg-[#E3E6F2] text-white  hover:text-black py-1 px-3 border-2 border-black`}
           onClick={() =>
             toggleStateVar((prevState) =>
               prevState === "WRITE" ? "LIST" : "WRITE"

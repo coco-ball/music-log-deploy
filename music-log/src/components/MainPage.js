@@ -258,35 +258,39 @@ const MainPage = () => {
   }, [lastPushTime]);
 
   return (
-    <>
+    <div className="flex flex-col h-screen">
       <Header
         username={userName}
         userImg={userImg}
         setStateVar={setStateVar}
       ></Header>
-      <SubHeader
-        stateVar={stateVar}
-        userName={userName}
-        toggleStateVar={toggleStateVar}
-      ></SubHeader>
-      <div className="w-screen absolute top-40 flex justify-center">
-        <div className="flex-col justify-center max-w-5xl mx-8">
-          <div className="contents">
-            {stateVar === "PLAYER" ? (
-              <Player></Player>
-            ) : stateVar === "WRITE" ? (
-              <div className="write">
-                <PostLog
-                  setStateVar={setStateVar}
-                  postLogData={postLogData}
-                  updateTime={updateTime}
-                ></PostLog>
+      <div className="flex-grow flex justify-center w-5xl">
+        <div id="area" className="flex flex-col items-center max-w-5xl mx-auto">
+          <SubHeader
+            stateVar={stateVar}
+            userName={userName}
+            toggleStateVar={toggleStateVar}
+          ></SubHeader>
+          <div className="w-full flex justify-center mt-36">
+            <div className="flex-col justify-center max-w-5xl">
+              <div className="contents">
+                {stateVar === "PLAYER" ? (
+                  <Player></Player>
+                ) : stateVar === "WRITE" ? (
+                  <div className="transition-all">
+                    <PostLog
+                      setStateVar={setStateVar}
+                      postLogData={postLogData}
+                      updateTime={updateTime}
+                    ></PostLog>
+                  </div>
+                ) : (
+                  <div className="transition-all">
+                    <MusicLog></MusicLog>
+                  </div>
+                )}
               </div>
-            ) : (
-              <div className="list">
-                <MusicLog></MusicLog>
-              </div>
-            )}
+            </div>
           </div>
         </div>
       </div>
@@ -310,7 +314,7 @@ const MainPage = () => {
           closeModal();
         }}
       ></Modal>
-    </>
+    </div>
   );
 };
 export default MainPage;
